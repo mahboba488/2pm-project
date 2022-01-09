@@ -130,36 +130,45 @@ justify-content: center;
 /* header*/
 
 header{
+
     width: 100%;
     background-color: var(--light-three);
     overflow: hidden;
     position: relative;
 }
 
-nav{
+nav{ 
+    margin-top: 2rem;
+   
     width: 100%;
-    position: relative;
+
     z-index: 50;
+    
 }
 
 nav .container{
+   position: relative;
     display: flex;
     justify-content: space-between;
     height: 6rem;
     align-items: center;
+   
 }
 
 .logo{
+    position: relative;
     width: 100px;
     display: flex;
     align-items: center;
 }
 
 .links ul{
+    position: relative;
     display: flex;
 }
 
 .links a{
+    position: relative;
     display: inline-block;
     padding: 0.9rem 1.2rem;
     color: var(--dark-one);
@@ -250,9 +259,19 @@ nav .container{
 .header-content .image .img-elememt{
 
     max-width: 750px;
+    animation: anime_hero 10s linear infinite alternate;
 
 }
 
+@keyframes anime_hero{
+    from{
+        transform: scale(0.9);
+    }
+
+    to{
+        transform: scale(1);
+    }
+}
 .points-sq{
     width: 210px;
 }
@@ -658,6 +677,8 @@ filter: invert(62%) sepia(83%) saturate(292%) hue-rotate(348deg) brightness(94%)
 
 }
 
+
+
 .pricing-box:hover .btn-p a{
     background: #efa459;
 }
@@ -745,6 +766,35 @@ filter: invert(62%) sepia(83%) saturate(292%) hue-rotate(348deg) brightness(94%)
     background-size: contain;
     filter: invert(46%) sepia(10%) saturate(5453%) hue-rotate(127deg) brightness(104%) contrast(98%);
 
+}
+
+.pricing-body .not{
+    text-decoration: line-through;
+    color: #8c7b7b;
+}
+.pricing-body .not::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/cross.png);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter:  invert(12%) sepia(99%) saturate(6864%) hue-rotate(10deg) brightness(109%) contrast(123%);
+    
+
+}
+
+.pricing-box:hover .pricing-body .not{
+    color: red;
+}
+
+.pricing-box:hover .pricing-body .not::before{
+    filter:  invert(12%) sepia(99%) saturate(6864%) hue-rotate(10deg) brightness(109%) contrast(123%);
 }
 
 .btn-p a{
